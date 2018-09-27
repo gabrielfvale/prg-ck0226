@@ -17,3 +17,6 @@ void circle_set(Circle* c, float x, float y, float r);
 
 /* Calculates the area of the circle */
 float circle_area(Circle* c);
+
+/* Checks if a point is inside the circle */
+int circle_in(Circle* c, Point* p);

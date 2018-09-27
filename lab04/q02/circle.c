@@ -25,7 +25,8 @@ void circle_free(Circle* c)
 
 void circle_access(Circle* c, float* x, float* y, float* r)
 {
-
+    point_access(c->p, x, y);
+    *r = c->radius;
 }
 
 void circle_set(Circle* c, float x, float y, float r)
@@ -39,4 +40,10 @@ float circle_area(Circle* c)
     float r = c->radius;
     float area = (4*r*r*r*PI)/3;
     return area;
+}
+
+int circle_in(Circle* c, Point* p)
+{
+    float d = point_distance(p, c->p);
+    return d < c->radius ? 1 : 0;
 }
